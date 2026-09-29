@@ -13,5 +13,6 @@ typedef struct {
 
 t_tree* create_tree();
 void destroy_tree(t_tree*);
+int is_empty(t_tree*);
 
 #endif
