@@ -141,3 +141,15 @@ int height(t_tree *tree) {
 
     return b;
 }
+
+int total_nodes(t_tree *tree) {
+    if (is_empty(tree)) {
+        return 0;
+    }
+
+    t_tree left, right;
+    left.root = tree->root->left;
+    right.root = tree->root->right;
+
+    return 1 + total_nodes(&left) + total_nodes(&right);
+}
