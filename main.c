@@ -22,6 +22,32 @@ void menu() {
 }
 
 int main() {
+    t_tree *tree = create_tree();
+
+    int opt = 0;
+    do {
+        menu();
+        scanf("%d", &opt);
+
+        switch (opt) {
+            case 1: {
+                printf("-----------------------------------------------\n");
+
+                char item;
+
+                printf("Insert the root value: ");
+                scanf("%c", &item); 
+                
+                insert_root(tree, item);
+
+                break;
+            }
+            default:
+                break;
+        }
+    } while (opt != 12);
+
+    destroy_tree(tree);
 
     return 0;
 }
