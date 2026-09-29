@@ -166,6 +166,13 @@ int main() {
                 printf("\n");
 
                 break;
+            case 11:
+                printf("-----------------------------------------------\n");
+
+                post_order(tree->root);
+                printf("\n");
+
+                break;
             default:
                 break;
         }
