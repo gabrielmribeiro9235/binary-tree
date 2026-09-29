@@ -191,3 +191,13 @@ void in_order(t_node *root) {
     printf("%c ", root->item);
     in_order(root->right);
 }
+
+void post_order(t_node *root) {
+    if (root == NULL) {
+        return;
+    }
+
+    post_order(root->left);
+    post_order(root->right);
+    printf("%c ", root->item);
+}
