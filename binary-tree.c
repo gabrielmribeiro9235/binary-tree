@@ -69,3 +69,19 @@ int insert_root(t_tree *tree, char item) {
 
     return 1;
 }
+
+int insert_left(t_node *parent, char item) {
+    if (parent == NULL || parent->left != NULL) {
+        return 0;
+    }
+
+    t_node *node = create_node(item);
+
+    if (node == NULL) {
+        return 0;
+    }
+
+    parent->left = node;
+
+    return 1;
+}
