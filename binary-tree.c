@@ -123,3 +123,21 @@ int remove_node(t_tree *tree, t_node *node) {
 
     return remove_node_recursive(&(tree->root), node);
 }
+
+int height(t_tree *tree) {
+    if (is_empty(tree)) {
+        return 0;
+    }
+
+    t_tree left, right;
+    left.root = tree->root->left;
+    right.root = tree->root->right;
+    int a = 1 + height(&left);
+    int b = 1 + height(&right);
+
+    if (a > b) {
+        return a;
+    }
+
+    return b;
+}
