@@ -3,14 +3,14 @@ CFLAGS = -Wall -Wextra
 
 all = my_program
 
-my_program: main.o binary-tree.o
-	  $(CC) $(CFLAGS) -o my_program main.o binary-tree.o
+my_program: main.o binary_tree.o
+	  $(CC) $(CFLAGS) -o my_program main.o binary_tree.o
 
-main.o: main.c binary-tree.h
+main.o: main.c binary_tree.h
 	  $(CC) $(CFLAGS) -c -o main.o main.c
 
-binary-tree.o: binary-tree.c binary-tree.h
-	  $(CC) $(CFLAGS) -c -o binary-tree.o binary-tree.c
+binary_tree.o: binary_tree.c binary_tree.h
+	  $(CC) $(CFLAGS) -c -o binary_tree.o binary_tree.c
 
 clean:
-	  rm -f my_program main.o binary-tree.o
+	  rm -f my_program main.o binary_tree.o

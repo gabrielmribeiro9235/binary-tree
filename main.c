@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include"binary-tree.h"
+#include"binary_tree.h"
 
 void menu() {
     printf("-----------------------------------------------\n");
