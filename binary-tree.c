@@ -28,3 +28,15 @@ t_node* create_node(char item) {
 
     return node;
 }
+
+void destroy_tree(t_tree *tree) {
+    if (tree == NULL) {
+        return;
+    }
+
+    destroy_branch(tree->root->left);
+    destroy_branch(tree->root->right);
+
+    free(tree->root);
+    free(tree);
+}
