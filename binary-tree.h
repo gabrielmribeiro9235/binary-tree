@@ -12,5 +12,6 @@ typedef struct {
 } t_tree;
 
 t_tree* create_tree();
+void destroy_tree(t_tree*);
 
 #endif
