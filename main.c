@@ -36,7 +36,7 @@ int main() {
                 char item;
 
                 printf("Insert the root value: ");
-                scanf("%c", &item); 
+                scanf(" %c", &item);
                 
                 insert_root(tree, item);
 
@@ -48,10 +48,10 @@ int main() {
                 char parent, new_item;
 
                 printf("Insert the parent node value: ");
-                scanf("%c", &parent);
+                scanf(" %c", &parent);
 
                 printf("Insert the new node value: ");
-                scanf("%c", &new_item);
+                scanf(" %c", &new_item);
 
                 int insertion_status = insert_left(search(tree->root, parent), new_item);
 
@@ -69,10 +69,10 @@ int main() {
                 char parent, new_item;
 
                 printf("Insert the parent node value: ");
-                scanf("%c", &parent);
+                scanf(" %c", &parent);
 
                 printf("Insert the new node value: ");
-                scanf("%c", &new_item);
+                scanf(" %c", &new_item);
 
                 int insertion_status = insert_right(search(tree->root, parent), new_item);
 
@@ -100,7 +100,7 @@ int main() {
                 char item;
 
                 printf("Insert the value of the node you want\nto search for: ");
-                scanf("%c", &item);
+                scanf(" %c", &item);
 
                 t_node *node = search(tree->root, item);
 
@@ -130,7 +130,7 @@ int main() {
                 char item;
 
                 printf("Insert the value of the node you want\nto remove: ");
-                scanf("%c", &item);
+                scanf(" %c", &item);
 
                 int remove_status = remove_node(tree, search(tree->root, item));
 
