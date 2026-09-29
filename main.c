@@ -124,6 +124,24 @@ int main() {
 
                 break;
             }
+            case 7: {
+                printf("-----------------------------------------------\n");
+
+                char item;
+
+                printf("Insert the value of the node you want\nto remove: ");
+                scanf("%c", &item);
+
+                int remove_status = remove_node(tree, search(tree->root, item));
+
+                if (remove_status) {
+                    printf("\n%c successfully removed\n", item);
+                } else {
+                    printf("\nFailed to remove\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
