@@ -12,6 +12,7 @@ typedef struct {
 } t_tree;
 
 t_tree* create_tree();
+t_node* create_node(char);
 void destroy_tree(t_tree*);
 int is_empty(t_tree*);
 
