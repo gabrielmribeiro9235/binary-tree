@@ -153,3 +153,21 @@ int total_nodes(t_tree *tree) {
 
     return 1 + total_nodes(&left) + total_nodes(&right);
 }
+
+t_node* search(t_node *root, char item) {
+    if (root == NULL) {
+        return NULL;
+    }
+
+    if (root->item == item) {
+        return root;
+    }
+
+    t_node *left_search = search(root->left, item);
+
+    if (left_search != NULL) {
+        return left_search;
+    }
+
+    return search(root->right, item);
+}
