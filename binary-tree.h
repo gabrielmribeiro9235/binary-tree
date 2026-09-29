@@ -18,5 +18,6 @@ int is_empty(t_tree*);
 int insert_root(t_tree*, char);
 int insert_left(t_node*, char);
 int insert_right(t_node*, char);
+int remove_node(t_tree*, t_node*);
 
 #endif
