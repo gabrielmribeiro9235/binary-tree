@@ -63,6 +63,27 @@ int main() {
 
                 break;
             }
+            case 3: {
+                printf("-----------------------------------------------\n");
+
+                char parent, new_item;
+
+                printf("Insert the parent node value: ");
+                scanf("%c", &parent);
+
+                printf("Insert the new node value: ");
+                scanf("%c", &new_item);
+
+                int insertion_status = insert_right(search(tree->root, parent), new_item);
+
+                if (insertion_status) {
+                    printf("\n%c successfully inserted to\nthe right of %c\n", new_item, parent);
+                } else {
+                    printf("\nFailed to insert\n");
+                }
+
+                break;
+            }
             default:
                 break;
         }
