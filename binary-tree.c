@@ -102,6 +102,20 @@ int insert_right(t_node *parent, char item) {
     return 1;
 }
 
+static int remove_node_recursive(t_node **root, t_node *target) {
+    if (*root == NULL) {
+        return 0;
+    }
+
+    if (*root == target) {
+        destroy_branch(*root);
+        *root = NULL;
+        return 1;
+    }
+
+    return remove_node_recursive(&((*root)->left), target) || remove_node_recursive(&((*root)->right), target);
+}
+
 int remove_node(t_tree *tree, t_node *node) {
     if (tree == NULL || tree->root == NULL || node == NULL) {
         return 0;
