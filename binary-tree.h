@@ -11,4 +11,6 @@ typedef struct {
     t_node *root;
 } t_tree;
 
+t_tree* create_tree();
+
 #endif
