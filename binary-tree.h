@@ -21,5 +21,6 @@ int insert_right(t_node*, char);
 int remove_node(t_tree*, t_node*);
 int height(t_tree*);
 int total_nodes(t_tree*);
+t_node* search(t_node*, char);
 
 #endif
