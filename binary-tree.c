@@ -29,6 +29,17 @@ t_node* create_node(char item) {
     return node;
 }
 
+static void destroy_branch(t_node *node) {
+    if (node == NULL) {
+        return;
+    }
+
+    destroy_branch(node->left);
+    destroy_branch(node->right);
+
+    free(node);
+}
+
 void destroy_tree(t_tree *tree) {
     if (tree == NULL) {
         return;
