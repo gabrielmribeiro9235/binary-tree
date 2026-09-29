@@ -171,3 +171,13 @@ t_node* search(t_node *root, char item) {
 
     return search(root->right, item);
 }
+
+void pre_order(t_node *root) {
+    if (root == NULL) {
+        return;
+    }
+
+    printf("%c ", root->item);
+    pre_order(root->left);
+    pre_order(root->right);
+}
