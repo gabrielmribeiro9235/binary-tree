@@ -53,3 +53,19 @@ void destroy_tree(t_tree *tree) {
 int is_empty(t_tree *tree) {
     return tree == NULL || tree->root == NULL;
 }
+
+int insert_root(t_tree *tree, char item) {
+    if (tree == NULL || !is_empty(tree)) {
+        return 0;
+    }
+
+    t_node *root = create_node(item);
+
+    if (root == NULL) {
+        return 0;
+    }
+
+    tree->root = root;
+
+    return 1;
+}
