@@ -16,5 +16,6 @@ t_node* create_node(char);
 void destroy_tree(t_tree*);
 int is_empty(t_tree*);
 int insert_root(t_tree*, char);
+int insert_left(t_node*, char);
 
 #endif
