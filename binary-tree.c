@@ -85,3 +85,19 @@ int insert_left(t_node *parent, char item) {
 
     return 1;
 }
+
+int insert_right(t_node *parent, char item) {
+    if (parent == NULL || parent->right != NULL) {
+        return 0;
+    }
+
+    t_node *node = create_node(item);
+
+    if (node == NULL) {
+        return 0;
+    }
+
+    parent->right = node;
+
+    return 1;
+}
