@@ -101,3 +101,11 @@ int insert_right(t_node *parent, char item) {
 
     return 1;
 }
+
+int remove_node(t_tree *tree, t_node *node) {
+    if (tree == NULL || tree->root == NULL || node == NULL) {
+        return 0;
+    }
+
+    return remove_node_recursive(&(tree->root), node);
+}
