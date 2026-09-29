@@ -22,5 +22,6 @@ int remove_node(t_tree*, t_node*);
 int height(t_tree*);
 int total_nodes(t_tree*);
 t_node* search(t_node*, char);
+void pre_order(t_node*);
 
 #endif
