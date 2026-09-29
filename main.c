@@ -152,6 +152,13 @@ int main() {
                 }
 
                 break;
+            case 9:
+                printf("-----------------------------------------------\n");
+
+                pre_order(tree->root);
+                printf("\n");
+
+                break;
             default:
                 break;
         }
