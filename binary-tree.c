@@ -45,9 +45,7 @@ void destroy_tree(t_tree *tree) {
         return;
     }
 
-    destroy_branch(tree->root->left);
-    destroy_branch(tree->root->right);
+    destroy_branch(tree->root);
 
-    free(tree->root);
     free(tree);
 }
