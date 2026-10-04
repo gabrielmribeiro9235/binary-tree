@@ -25,5 +25,6 @@ t_node* search(t_node*, char);
 void pre_order(t_node*);
 void in_order(t_node*);
 void post_order(t_node*);
+void width_traversal(t_tree*);
 
 #endif
