@@ -176,6 +176,10 @@ int main() {
                 break;
             case 12:
                 printf("-----------------------------------------------\n");
+                width_traversal(tree);
+                break;
+            case 13:
+                printf("-----------------------------------------------\n");
                 printf("Leaving the program\n");
                 break;
             default:
@@ -183,7 +187,7 @@ int main() {
                 printf("Invalid choice\n");
                 break;
         }
-    } while (opt != 12);
+    } while (opt != 13);
 
     printf("-----------------------------------------------\n");
     printf("Freeing up memory\n");
