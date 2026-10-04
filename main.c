@@ -16,7 +16,8 @@ void menu() {
     printf(" 9 - pre_order\n");
     printf("10 - in_order\n");
     printf("11 - post_order\n");
-    printf("12 - exit\n");
+    printf("12 - width_traversal\n");
+    printf("13 - exit\n");
     printf("-----------------------------------------------\n");
     printf("Your choice: ");
 }
