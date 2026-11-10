@@ -1,16 +1,38 @@
 CC = gcc
-CFLAGS = -Wall -Wextra
+CFLAGS = -Wall -Wextra -I. -Ilibs
 
-all = my_program
+ifeq ($(OS),Windows_NT)
+    PLATFORM = windows
+    TARGET   = my_program.exe
+    ifneq (,$(findstring cmd,$(shell echo %COMSPEC%)))
+        RM = del /Q /F
+    else
+        RM = rm -f
+    endif
+else
+    PLATFORM = linux
+    TARGET   = my_program
+    RM       = rm -f
+endif
 
-my_program: main.o binary_tree.o
-	  $(CC) $(CFLAGS) -o my_program main.o binary_tree.o
+LDFLAGS = -Llibs
+LDLIBS  = -lstack_$(PLATFORM) -lqueue_$(PLATFORM)
 
-main.o: main.c binary_tree.h
-	  $(CC) $(CFLAGS) -c -o main.o main.c
+OBJS = main.o binary_tree.o
+HEADERS = binary_tree.h libs/stack.h libs/queue.h
 
-binary_tree.o: binary_tree.c binary_tree.h
-	  $(CC) $(CFLAGS) -c -o binary_tree.o binary_tree.c
+all: $(TARGET)
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LDFLAGS) $(LDLIBS)
+
+main.o: main.c $(HEADERS)
+	$(CC) $(CFLAGS) -c -o main.o main.c
+
+binary_tree.o: binary_tree.c $(HEADERS)
+	$(CC) $(CFLAGS) -c -o binary_tree.o binary_tree.c
 
 clean:
-	  rm -f my_program main.o binary_tree.o
+	-$(RM) $(TARGET) $(OBJS)
+
+.PHONY: all clean
