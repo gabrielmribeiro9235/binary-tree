@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include"binary_tree.h"
+#include"./libs/stack.h"
+#include"./libs/queue.h"
 
 t_tree* create_tree() {
     t_tree *tree = malloc(sizeof(t_tree));
