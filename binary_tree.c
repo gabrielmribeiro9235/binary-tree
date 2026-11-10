@@ -234,3 +234,33 @@ void width_traversal(t_tree *tree) {
     printf("\n");
     destroy_queue(queue);
 }
+
+void iterative_pre_order(t_node *root) {
+    if (root == NULL) {
+        return;
+    }
+
+    t_stack *stack = create_stack();
+
+    if (stack == NULL) {
+        return;
+    }
+
+    push(stack, root);
+
+    while (!is_stack_empty(stack)) {
+        t_node *current;
+        pop(stack, &current);
+
+        printf("%c ", current->item);
+
+        if (current->right != NULL) {
+            push(stack, current->right);
+        }
+        if (current->left != NULL) {
+            push(stack, current->left);
+        }
+    }
+
+    destroy_stack(stack);
+}
