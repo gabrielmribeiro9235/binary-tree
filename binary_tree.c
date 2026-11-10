@@ -264,3 +264,37 @@ void iterative_pre_order(t_node *root) {
 
     destroy_stack(stack);
 }
+
+void iterative_in_order(t_node *root) {
+    if (root == NULL) {
+        return;
+    }
+
+    t_stack *stack = create_stack();
+
+    if (stack == NULL) {
+        return;
+    }
+
+    t_node *current = root;
+    int visited = 0;
+    while(current != NULL || !is_stack_empty(stack)) {
+        if (current->left != NULL && !visited) {
+            push(stack, current);
+            current = current->left;
+        } else if (current->right != NULL) {
+            printf("%c ", current->item);
+            current = current->right;
+            visited = 0;
+        } else {
+            printf("%c ", current->item);
+            if (pop(stack, &current)) {
+                visited = 1;
+            } else {
+                current = NULL;
+            }
+        }
+    }
+
+    destroy_stack(stack);
+}
