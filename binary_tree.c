@@ -209,33 +209,28 @@ void width_traversal(t_tree *tree) {
         return;
     }
 
-    int tree_size = total_nodes(tree);
-    int queue_size = (tree_size + 1) / 2;
+    t_queue *queue = create_queue();
 
-    t_node **queue = malloc(sizeof(t_node*) * queue_size);
     if (queue == NULL) {
         return;
     }
 
-    int start = 0;
-    int end = 0;
+    t_node *current = tree->root;
+    in(queue, current);
 
-    queue[end++] = tree->root;
+    while (!is_queue_empty(queue)) {
+        out(queue, &current);
 
-    for (int i = 0; i < tree_size; i++) {
-        t_node *current = queue[start];
-        start = (start + 1) % queue_size;
         printf("%c ", current->item);
 
         if (current->left != NULL) {
-            queue[end] = current->left;
-            end = (end + 1) % queue_size;
+            in(queue, current->left);
         }
         if (current->right != NULL) {
-            queue[end] = current->right;
-            end = (end + 1) % queue_size;
+            in(queue, current->right);
         }
     }
+
     printf("\n");
-    free(queue);
+    destroy_queue(queue);
 }
