@@ -16,7 +16,8 @@ void menu() {
     printf("10 - in_order\n");
     printf("11 - post_order\n");
     printf("12 - width_traversal\n");
-    printf("13 - exit\n");
+    printf("13 - iterative_pre_order\n");
+    printf("14 - exit\n");
     printf("-----------------------------------------------\n");
     printf("Your choice: ");
 }
@@ -179,6 +180,13 @@ int main() {
                 break;
             case 13:
                 printf("-----------------------------------------------\n");
+
+                iterative_pre_order(tree->root);
+                printf("\n");
+
+                break;
+            case 14:
+                printf("-----------------------------------------------\n");
                 printf("Leaving the program\n");
                 break;
             default:
@@ -186,7 +194,7 @@ int main() {
                 printf("Invalid choice\n");
                 break;
         }
-    } while (opt != 13);
+    } while (opt != 14);
 
     printf("-----------------------------------------------\n");
     printf("Freeing up memory\n");
